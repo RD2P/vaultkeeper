@@ -1,0 +1,126 @@
+
+
+
+:root{
+  --dark-gray:#1E1E1E;
+  --light-gray:#2E2E2E;
+  --green-accent: #05F7C0;
+  --dark-green: #19b994;
+}
+
+/* Helpers */
+.temp{
+  color: white;
+}
+
+.find{
+  background-color: aqua;
+}
+
+#root{
+ min-width: 800px;
+}
+
+.red{
+  color: red;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-gray);
+  padding: 0 2rem;
+}
+
+.key{
+  margin-bottom: 2rem;
+}
+
+.page-title{
+  text-align: center;
+  text-shadow: 0 0 0.5rem rgb(105, 103, 103);
+  color: white;
+}
+
+.heading-row{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  background-color: var(--light-gray);
+  box-shadow: 0 0 3px var(--green-accent);
+  border-radius: 1rem;
+  height: 3rem;
+  color: white;
+}
+
+button{
+  border: 0px;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: var(--green-accent);
+  box-shadow: 0 0 3px rgb(105, 102, 102) inset;
+  height: 2rem;
+}
+
+button:hover{
+  background-color: var(--dark-green);
+}
+
+.input-row{
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  align-items: center;
+}
+
+.input{
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 -2px 3px var(--green-accent) inset;
+  color: white;
+  background-color: var(--light-gray);
+}
+
+.account-info-container{
+  border-radius: 1rem;
+  margin: 1rem 0;
+  background-color: var(--light-gray);
+  align-items: center;
+}
+
+
+.account-row{
+  padding: 0.5rem;
+  padding-left: 2rem;
+  display: grid;
+  grid-template-columns: 32% 28% 25% 1fr;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(235, 230, 230);
+  background-color: transparent;
+  text-shadow: 0 0 4px rgb(21, 22, 21);
+  height: 2rem;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.account-row p {
+  margin: 0;
+}
+
+.password--text{
+  overflow: hidden;
+  margin: 0;
+  max-width: 400px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.account-row--button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
