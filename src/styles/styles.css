@@ -1,16 +1,7 @@
-/*  ======
-    Helpers 
-    ======  */
-.white-clr {
-  color: white;
-}
-
-.red-clr {
-  color: red;
-}
-
-.bg-clr {
-  background-color: aqua;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -19,13 +10,14 @@
   --green-accent: #05F7C0;
   --dark-green: #19b994;
   font-family: 'Poppins', sans-serif;
+  color: white;
   background-color: var(--dark-gray);
   min-width: 320px;
 }
 
 body {
   margin: 0;
-  padding: 0 2rem;
+  padding: 3vh 2rem;
 }
 
 .key {
@@ -33,21 +25,19 @@ body {
 }
 
 .page-title {
+  margin: 2rem;
   text-align: center;
   text-shadow: 0 0 0.5rem rgb(105, 103, 103);
-  color: white;
 }
 
-.row {}
-
 button {
+  display: flex;
   border: 0px;
   border-radius: 1rem;
   padding: 0.5rem;
   cursor: pointer;
   background-color: var(--green-accent);
   box-shadow: 0 0 3px rgb(105, 102, 102) inset;
-  height: 2rem;
 }
 
 button:hover {
@@ -56,34 +46,35 @@ button:hover {
 
 .account-info-container {
   border-radius: 1rem;
-  margin: 1rem 0;
   background-color: var(--light-gray);
-  align-items: center;
+  padding: 0 0.5rem;
 }
 
 .account-row {
   padding: 0.5rem;
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
   display: grid;
-  grid-template-columns: 32% 28% 25% 1fr;
+  grid-template-columns: 30% 28% 25% 1fr;
   justify-content: space-between;
   align-items: center;
-  color: rgb(235, 230, 230);
-  background-color: transparent;
   text-shadow: 0 0 4px rgb(21, 22, 21);
-  height: 2rem;
-  overflow: hidden;
   font-size: 0.9rem;
 }
 
-/* .account-row p {
-  margin: 0;
-} */
+@media (max-width: 450px) {
+  .account-row {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  button {
+    padding: 0.3rem;
+  }
+}
 
 .password--text {
   overflow: hidden;
   margin: 0;
-  max-width: 400px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }

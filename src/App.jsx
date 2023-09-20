@@ -81,11 +81,9 @@ function App() {
 
   return (
     <>
-      <div className="page-title">
-        <h1>Vault Keeper</h1>
+          <h1 className="page-title">Vault Keeper</h1>
         {/* {needKey &&  keyInput} */}
-      </div>
-
+   
       <HeadingRow handleAddAccount={handleAddAccount}/>
 
       {/* Input row */}
