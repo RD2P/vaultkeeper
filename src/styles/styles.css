@@ -1,47 +1,44 @@
+/*  ======
+    Helpers 
+    ======  */
+.temp {
+  color: white;
+}
 
+.find {
+  background-color: aqua;
+}
 
+.red {
+  color: red;
+}
 
-:root{
-  --dark-gray:#1E1E1E;
-  --light-gray:#2E2E2E;
+:root {
+  --dark-gray: #1E1E1E;
+  --light-gray: #2E2E2E;
   --green-accent: #05F7C0;
   --dark-green: #19b994;
 }
 
-/* Helpers */
-.temp{
-  color: white;
-}
-
-.find{
-  background-color: aqua;
-}
-
-#root{
- min-width: 800px;
-}
-
-.red{
-  color: red;
-}
-
-body{
+body {
+  margin: 0;
+  min-width: 350px;
   font-family: 'Poppins', sans-serif;
   background-color: var(--dark-gray);
   padding: 0 2rem;
 }
 
-.key{
+.key {
   margin-bottom: 2rem;
 }
 
-.page-title{
+.page-title {
   text-align: center;
   text-shadow: 0 0 0.5rem rgb(105, 103, 103);
   color: white;
 }
 
-.heading-row{
+.heading-row {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
@@ -53,7 +50,7 @@ body{
   color: white;
 }
 
-button{
+button {
   border: 0px;
   border-radius: 1rem;
   padding: 0.5rem;
@@ -63,11 +60,11 @@ button{
   height: 2rem;
 }
 
-button:hover{
+button:hover {
   background-color: var(--dark-green);
 }
 
-.input-row{
+.input-row {
   margin: 1rem 0;
   display: flex;
   justify-content: space-between;
@@ -75,7 +72,7 @@ button:hover{
   align-items: center;
 }
 
-.input{
+.input {
   border: none;
   border-radius: 1rem;
   padding: 0.5rem;
@@ -84,15 +81,14 @@ button:hover{
   background-color: var(--light-gray);
 }
 
-.account-info-container{
+.account-info-container {
   border-radius: 1rem;
   margin: 1rem 0;
   background-color: var(--light-gray);
   align-items: center;
 }
 
-
-.account-row{
+.account-row {
   padding: 0.5rem;
   padding-left: 2rem;
   display: grid;
@@ -111,7 +107,7 @@ button:hover{
   margin: 0;
 }
 
-.password--text{
+.password--text {
   overflow: hidden;
   margin: 0;
   max-width: 400px;
@@ -119,8 +115,15 @@ button:hover{
   text-overflow: ellipsis;
 }
 
-.account-row--button-container{
+.account-row--button-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 470px) {
+
+  .heading-row {
+    visibility: hidden;
+  }
 }

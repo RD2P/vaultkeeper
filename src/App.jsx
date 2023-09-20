@@ -5,6 +5,7 @@ import AccountRow from './components/AccountRow'
 import Encrypt from './components/Encrypt'
 // import Decrypt from "./components/Decrypt"
 
+import InputRow from './components/InputRow'
 
 
 function App() {
@@ -31,8 +32,7 @@ function App() {
 
   function handleEncrypt(){
     setShowInputRow(prevState => !prevState)
-    if(currentAccount.password !== ""){
-    // {currentAccount.site !== "" && currentAccount.username !== "" && }
+    if(currentAccount.site !== "" && currentAccount.username !== "" &&  currentAccount.password !== ""){
       const password = currentAccount.password
       accounts.push(
         {site: currentAccount.site,
@@ -60,7 +60,6 @@ function App() {
     password: ""
   })
   
-  
   function handleInputChange(event){
     setCurrentAccount(prevFormData => {
       return {
@@ -70,39 +69,12 @@ function App() {
     })
   }
 
-  const inputRow =  <div className="input-row">
-                      <input
-                        className="input"
-                        placeholder="Site"
-                        name="site"
-                        onChange={handleInputChange}
-                        value={currentAccount.site}
-                      />
-                      <input
-                        className="input"
-                        placeholder="Username"
-                        name="username"
-                        onChange={handleInputChange}
-                        value={currentAccount.username}
-                      />
-                      <input
-                        className="input"
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        onChange={handleInputChange}
-                        value={currentAccount.password}
-                      />
-                      <button onClick={handleEncrypt}>Encrypt</button>
-                    </div>
-
   const accountRows = accounts.map(account => {
     return (<AccountRow 
         key={account.site}
         site={account.site}
         username={account.username}
         password={account.password}
-
     />)
   })
 
@@ -121,11 +93,17 @@ function App() {
         <button onClick={handleAddAccount}>Add an account</button>
       </div>
 
-      {showInputRow && inputRow}
+      {/* Input row */}
+      {showInputRow && <InputRow 
+        handleInputChange={handleInputChange}
+        handleEncrypt={handleEncrypt}
+      />}
   
+      {/* Account rows */}
       <div className="account-info-container">
         {accountRows}
       </div>
+      
     </>
   )
 }
