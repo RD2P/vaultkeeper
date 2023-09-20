@@ -1,3 +1,20 @@
 h1 {
   color: white;
 }
+
+.input-row {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  align-items: center;
+}
+
+.input {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 -2px 3px var(--green-accent) inset;
+  color: white;
+  background-color: var(--light-gray);
+}
