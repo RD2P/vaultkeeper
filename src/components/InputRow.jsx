@@ -3,7 +3,7 @@ import '../styles/inputrow.css'
 const InputRow = (props) => {
   const { handleInputChange, handleEncrypt, site, username, password} = props
   return(
-    <div className="input-row">
+    <div className="input-row row">
       <input
         className="input"
         placeholder="Site"

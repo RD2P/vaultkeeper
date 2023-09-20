@@ -5,6 +5,7 @@ import AccountRow from './components/AccountRow'
 import Encrypt from './components/Encrypt'
 // import Decrypt from "./components/Decrypt"
 
+import HeadingRow from './components/HeadingRow'
 import InputRow from './components/InputRow'
 
 
@@ -85,13 +86,7 @@ function App() {
         {/* {needKey &&  keyInput} */}
       </div>
 
-       {/* Heading row */}
-      <div className="heading-row">
-        <h4>Site</h4>
-        <h4>Username</h4>
-        <h4>Password</h4>
-        <button onClick={handleAddAccount}>Add an account</button>
-      </div>
+      <HeadingRow handleAddAccount={handleAddAccount}/>
 
       {/* Input row */}
       {showInputRow && <InputRow 
@@ -100,7 +95,7 @@ function App() {
       />}
   
       {/* Account rows */}
-      <div className="account-info-container">
+      <div className="account-info-container row">
         {accountRows}
       </div>
       
