@@ -104,9 +104,10 @@ function App() {
           {accountRows}
         </div>
         <div className="note-container"> 
-          <p className="note">Thanks for checking out Vault Keeper.</p>
-          <p>It's a passwprd manager that uses a custom cipher for encryption and uses a master key for decryption.</p>
-          <p><strong>The feature that allows users to choose a master key is still in progress, for now, the master key is hardcoded to be "key".</strong></p>
+          <p className="note">Thanks for checking out Vault Keeper!</p>
+          <p>It's a password manager with a custom encryption and a master key for decryption.</p>
+          <p>This projects is still a work in progress. More features are currently being added such as re-encrypting a password after it has been decrypted.</p>
+          <p><strong>The feature that allows users to choose a master key is still being built, for now, the master key is hardcoded to be "key".</strong></p>
           <p>Click "Add an account" to start!</p>
         </div>
         
