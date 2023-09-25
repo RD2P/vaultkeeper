@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styles from './styles/styles.css'
+import './styles/styles.css'
 import accounts from './accountData.jsx'
 import AccountRow from './components/AccountRow'
 import Encrypt from './components/Encrypt'
@@ -90,22 +90,26 @@ function App() {
 
   return (
     <>
-          <h1 className="page-title">Vault Keeper</h1>
+     
+        <h1 className="page-title">Vault Keeper</h1>
         {/* {needKey &&  keyInput} */}
-   
-      <HeadingRow handleAddAccount={handleAddAccount}/>
-
-      {/* Input row appears if showInputRow is true*/}
-      {showInputRow && <InputRow 
-        handleInputChange={handleInputChange}
-        handleEncrypt={handleEncrypt}
-      />}
-  
-      {/* Account rows */}
-      <div className="account-info-container row">
-        {accountRows}
-      </div>
-      
+        <HeadingRow handleAddAccount={handleAddAccount}/>
+        {/* Input row appears if showInputRow is true*/}
+        {showInputRow && <InputRow
+          handleInputChange={handleInputChange}
+          handleEncrypt={handleEncrypt}
+        />}
+        {/* Account rows */}
+        <div className="account-info-container row">
+          {accountRows}
+        </div>
+        <div className="note-container"> 
+          <p className="note">Thanks for checking out Vault Keeper.</p>
+          <p>It's a passwprd manager that uses a custom cipher for encryption and uses a master key for decryption.</p>
+          <p><strong>The feature that allows users to choose a master key is still in progress, for now, the master key is hardcoded to be "key".</strong></p>
+          <p>Click "Add an account" to start!</p>
+        </div>
+        
     </>
   )
 }
