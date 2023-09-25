@@ -22,8 +22,6 @@ const HeadingRow = (props) => {
       })
   }, [screenSize])
 
-  console.log(screenSize.width)
-
   const headingRowTxt = <>
       <div>Site</div>
       <div>Username</div>

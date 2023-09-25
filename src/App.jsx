@@ -11,14 +11,19 @@ import InputRow from './components/InputRow'
 
 function App() {
   
+  //Did user input a key?
   const [needKey, setNeedKey] = useState(true)
+
+  //temp hardcoded key
   let encrKey='key'
 
+  //User enters their master key
   const keyInput = <>
     <h4>Enter your master key</h4>
     <input placeholder="key" className="key input" onKeyDown={handleKeyInput}/>
   </>
 
+  //Handles user entering master key
   function handleKeyInput(event){
     if (event.key === 'Enter'){
       encrKey=event.target.value
@@ -27,10 +32,13 @@ function App() {
     }  
   }
 
+  //Toggle the input boxes for site, username, password
   function handleAddAccount(){
     setShowInputRow(prevState => !prevState)
   }
 
+  //Clears adn hides input row
+  //Pushes account info to accounts array, password is encrypted
   function handleEncrypt(){
     setShowInputRow(prevState => !prevState)
     if(currentAccount.site !== "" && currentAccount.username !== "" &&  currentAccount.password !== ""){
@@ -70,6 +78,7 @@ function App() {
     })
   }
 
+  //Goes through each object in the accounts array and displays the info in the AccountRow component
   const accountRows = accounts.map(account => {
     return (<AccountRow 
         key={account.site}
@@ -86,7 +95,7 @@ function App() {
    
       <HeadingRow handleAddAccount={handleAddAccount}/>
 
-      {/* Input row */}
+      {/* Input row appears if showInputRow is true*/}
       {showInputRow && <InputRow 
         handleInputChange={handleInputChange}
         handleEncrypt={handleEncrypt}
