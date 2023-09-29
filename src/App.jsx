@@ -91,24 +91,26 @@ function App() {
   return (
     <>
      
-        <h1 className="page-title">Vault Keeper</h1>
-        {/* {needKey &&  keyInput} */}
-        <HeadingRow handleAddAccount={handleAddAccount}/>
-        {/* Input row appears if showInputRow is true*/}
-        {showInputRow && <InputRow
-          handleInputChange={handleInputChange}
-          handleEncrypt={handleEncrypt}
-        />}
-        {/* Account rows */}
-        <div className="account-info-container row">
-          {accountRows}
-        </div>
-        <div className="note-container"> 
-          <p className="note">Thanks for checking out Vault Keeper!</p>
-          <p>It's a password manager with a custom encryption and a master key for decryption.</p>
-          <p>This projects is still a work in progress. More features are currently being added such as re-encrypting a password after it has been decrypted.</p>
-          <p><strong>The feature that allows users to choose a master key is still being built, for now, the master key is hardcoded to be "key".</strong></p>
-          <p>Click "Add an account" to start!</p>
+        <div className="container">
+          <h1 className="page-title">Vault Keeper</h1>
+          {/* {needKey &&  keyInput} */}
+          <HeadingRow handleAddAccount={handleAddAccount}/>
+          {/* Input row appears if showInputRow is true*/}
+          {showInputRow && <InputRow
+            handleInputChange={handleInputChange}
+            handleEncrypt={handleEncrypt}
+          />}
+          {/* Account rows */}
+          <div className="account-info-container row">
+            {accountRows}
+          </div>
+          <div className="note-container">
+            <p className="note">Thanks for checking out Vault Keeper!</p>
+            <p>It's a password manager with a custom encryption and a master key for decryption.</p>
+            <p>This projects is still a work in progress. More features are currently being added such as re-encrypting a password after it has been decrypted.</p>
+            <p><strong>The feature that allows users to choose a master key is still being built, for now, the master key is hardcoded to be "key".</strong></p>
+            <p>Click "Add an account" to start!</p>
+          </div>
         </div>
         
     </>
