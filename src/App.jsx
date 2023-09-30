@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './styles/styles.css'
+import KeyInput from './components/KeyInput'
 import accounts from './accountData.jsx'
 import AccountRow from './components/AccountRow'
 import Encrypt from './components/Encrypt'
@@ -12,24 +13,14 @@ import InputRow from './components/InputRow'
 function App() {
   
   //Did user input a key?
-  const [needKey, setNeedKey] = useState(true)
+  const [showKeyInput, setShowKeyInput] = useState(true)
 
   //temp hardcoded key
   let encrKey='key'
 
-  //User enters their master key
-  const keyInput = <>
-    <h4>Enter your master key</h4>
-    <input placeholder="key" className="key input" onKeyDown={handleKeyInput}/>
-  </>
-
-  //Handles user entering master key
-  function handleKeyInput(event){
-    if (event.key === 'Enter'){
-      encrKey=event.target.value
-      console.log(encrKey)
-      setNeedKey(prevState => !prevState)
-    }  
+  const handleKeyButton = () => {
+    console.log("Key button pressed")
+    setShowKeyInput(prevState => !prevState)
   }
 
   //Toggle the input boxes for site, username, password
@@ -37,7 +28,7 @@ function App() {
     setShowInputRow(prevState => !prevState)
   }
 
-  //Clears adn hides input row
+  //Clears and hides input row
   //Pushes account info to accounts array, password is encrypted
   function handleEncrypt(){
     setShowInputRow(prevState => !prevState)
@@ -90,29 +81,31 @@ function App() {
 
   return (
     <>
-     
-        <div className="container">
-          <h1 className="page-title">Vault Keeper</h1>
-          {/* {needKey &&  keyInput} */}
-          <HeadingRow handleAddAccount={handleAddAccount}/>
-          {/* Input row appears if showInputRow is true*/}
-          {showInputRow && <InputRow
-            handleInputChange={handleInputChange}
-            handleEncrypt={handleEncrypt}
-          />}
-          {/* Account rows */}
-          <div className="account-info-container row">
-            {accountRows}
-          </div>
-          <div className="note-container">
-            <p className="note">Thanks for checking out Vault Keeper!</p>
-            <p>It's a password manager with a custom encryption and a master key for decryption.</p>
-            <p>This projects is still a work in progress. More features are currently being added such as re-encrypting a password after it has been decrypted.</p>
-            <p><strong>The feature that allows users to choose a master key is still being built, for now, the master key is hardcoded to be "key".</strong></p>
-            <p>Click "Add an account" to start!</p>
-          </div>
-        </div>
+      <div className="container">
+        <h1 className="page-title">Vault Keeper</h1>
+
+        <button className="keyButton" onClick={handleKeyButton}>Key</button>
+
+        {showKeyInput && <KeyInput/>}
         
+        <HeadingRow handleAddAccount={handleAddAccount}/>
+        {/* Input row appears if showInputRow is true*/}
+        {showInputRow && <InputRow
+          handleInputChange={handleInputChange}
+          handleEncrypt={handleEncrypt}
+        />}
+        {/* Account rows */}
+        <div className="account-info-container row">
+          {accountRows}
+        </div>
+        <div className="note-container">
+          <p className="note">Thanks for checking out Vault Keeper!</p>
+          <p>It's a password manager with a custom encryption and a master key for decryption.</p>
+          <p>This projects is still a work in progress. More features are currently being added such as re-encrypting a password after it has been decrypted.</p>
+          <p><strong>The feature that allows users to choose a master key is still being built, for now, the master key is hardcoded to be "key".</strong></p>
+          <p>Click "Add an account" to start!</p>
+        </div>
+      </div>
     </>
   )
 }
