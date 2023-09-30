@@ -12,20 +12,35 @@ import InputRow from './components/InputRow'
 
 function App() {
   
-  //Did user input a key?
-  const [showKeyInput, setShowKeyInput] = useState(true)
+  const [showKeyInput, setShowKeyInput] = useState(false)
+  const [encrKeyExists, setEncrKeyExists] = useState(false)
 
-  //temp hardcoded key
-  let encrKey='key'
+  const [encrKey, setEncrKey] = useState('firstkey')
+
+  //Handles user entering master key
+  //key is somehow not being changed here
+  //fix
+  function handleKeyInput(event){
+
+    if (event.key === 'Enter'){
+      setEncrKey(event.target.value)
+      if (encrKey){
+        setEncrKeyExists(true)
+        setShowKeyInput(false)
+        alert("Master key set!")
+      } else {
+        alert("Set a master key")
+      }
+    }  
+  }
 
   const handleKeyButton = () => {
-    console.log("Key button pressed")
     setShowKeyInput(prevState => !prevState)
   }
 
   //Toggle the input boxes for site, username, password
   function handleAddAccount(){
-    setShowInputRow(prevState => !prevState)
+    encrKeyExists ? setShowInputRow(prevState => !prevState) : alert("Set a master key")
   }
 
   //Clears and hides input row
@@ -47,8 +62,6 @@ function App() {
     else{
       alert("Fill in the account info")
     }
-
-    // setIsEncrypted(prevState => !prevState)
     
   }
   
@@ -86,7 +99,7 @@ function App() {
 
         <button className="keyButton" onClick={handleKeyButton}>Key</button>
 
-        {showKeyInput && <KeyInput/>}
+        {showKeyInput && <KeyInput handleKeyInput={handleKeyInput}/>}
         
         <HeadingRow handleAddAccount={handleAddAccount}/>
         {/* Input row appears if showInputRow is true*/}

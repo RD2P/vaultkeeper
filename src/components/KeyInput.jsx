@@ -1,14 +1,8 @@
 import '../styles/key.css'
 
-const KeyInput = () => {
-    //Handles user entering master key
-    function handleKeyInput(event){
-      if (event.key === 'Enter'){
-        encrKey=event.target.value
-        console.log(encrKey)
-        setNeedKey(prevState => !prevState)
-      }  
-    }
+const KeyInput = (props) => {
+
+  const { handleKeyInput } = props
   
   return(
     <div className="keyInputWrapper">
