@@ -97,7 +97,7 @@ function App() {
       <div className="container">
         <h1 className="page-title">Vault Keeper</h1>
 
-        <button className="keyButton" onClick={handleKeyButton}>Key</button>
+        <button className="keyButton" onClick={handleKeyButton}>Set master key</button>
 
         {showKeyInput && <KeyInput handleKeyInput={handleKeyInput}/>}
         
@@ -114,9 +114,9 @@ function App() {
         <div className="note-container">
           <p className="note">Thanks for checking out Vault Keeper!</p>
           <p>It's a password manager with a custom encryption and a master key for decryption.</p>
-          <p>This projects is still a work in progress. More features are currently being added such as re-encrypting a password after it has been decrypted.</p>
-          <p><strong>The feature that allows users to choose a master key is still being built, for now, the master key is hardcoded to be "key".</strong></p>
-          <p>Click "Add an account" to start!</p>
+          <p>This projects is still a work in progress. More features are being added daily.</p>
+
+          <p>Click "Set master key" to start!</p>
         </div>
       </div>
     </>
