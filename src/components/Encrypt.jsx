@@ -1,8 +1,5 @@
-import React from 'react'
-// import accounts from '../accountData'
-
 // Encrypts passwords up to 95 characters long
-export default function Encrypt (password, encrKey) {
+const Encrypt = (password, encrKey) => {
   
   const entryRotor = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
 
@@ -59,7 +56,7 @@ export default function Encrypt (password, encrKey) {
     encrypted += encrChar
   }
 
- 
-
   return encrypted
 }
+
+export default Encrypt

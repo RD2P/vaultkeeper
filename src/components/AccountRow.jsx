@@ -1,7 +1,6 @@
-import React from 'react'
 import Decrypt from './Decrypt'
 
-export default function AccountRow(props){
+const AccountRow = (props) =>{
  
   function handleDecrypt(event) {
     const password = props.password
@@ -24,3 +23,5 @@ export default function AccountRow(props){
       </div>
   )
 }
+
+export default AccountRow

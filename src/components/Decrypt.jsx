@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function Decrypt(password, decrKey) {
+const Decrypt = (password, decrKey) => {
   const entryRotor = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
 
   const exitRotor = password.substring(0, 95)
@@ -54,3 +52,5 @@ export default function Decrypt(password, decrKey) {
  
   return decrypted
 }
+
+export default Decrypt
