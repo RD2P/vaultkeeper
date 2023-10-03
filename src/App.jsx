@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles/styles.css'
 import KeyInput from './components/KeyInput'
-import accounts from './accountData.jsx'
+import accounts from '../data/accountData.jsx'
 import AccountRow from './components/AccountRow'
 import Encrypt from './components/Encrypt'
 // import Decrypt from "./components/Decrypt"
