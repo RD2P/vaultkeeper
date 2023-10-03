@@ -86,6 +86,7 @@ function App() {
         site={account.site}
         username={account.username}
         password={account.password}
+        encrKey={encrKey}
     />)
   })
 
