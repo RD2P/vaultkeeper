@@ -17,9 +17,6 @@ function App() {
 
   const [encrKey, setEncrKey] = useState('firstkey')
 
-  //Handles user entering master key
-  //key is somehow not being changed here
-  //fix
   function handleKeyInput(event){
 
     if (event.key === 'Enter'){
