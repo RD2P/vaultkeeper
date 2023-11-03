@@ -4,12 +4,16 @@
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
 - [Folder Structure](#folder-structure)
 - [Technologies Used](#technologies-used)
 - [Authors](#authors)
+
+
+## [Demo](https://rd2p.github.io/vaultkeeper/)
 
 ## Installation
 
@@ -79,7 +83,7 @@ To use the app:
 
 - React
 
-## Author
+## Authors
 
 - Raphael
 
