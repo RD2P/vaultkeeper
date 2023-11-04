@@ -58,7 +58,6 @@ button:hover {
 
 .account-row {
   padding: 0.5rem;
-  /* padding-left: 2rem; */
   display: grid;
   grid-template-columns: 30% 28% 25% 1fr;
   justify-content: space-between;
@@ -93,4 +92,8 @@ button:hover {
 
 .note {
   margin-top: 2rem;
+}
+
+.link {
+  color: var(--green-accent);
 }
