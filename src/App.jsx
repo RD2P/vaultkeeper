@@ -4,17 +4,24 @@ import KeyInput from './components/KeyInput'
 import accounts from '../data/accountData.jsx'
 import AccountRow from './components/AccountRow'
 import Encrypt from './components/Encrypt'
-
 import HeadingRow from './components/HeadingRow'
 import InputRow from './components/InputRow'
+import KeyModal from './components/modal/KeyModal.jsx'
 
 
 function App() {
-
+  
   const [showKeyInput, setShowKeyInput] = useState(false)
   const [encrKeyExists, setEncrKeyExists] = useState(false)
-
   const [encrKey, setEncrKey] = useState('firstkey')
+  const [showInputRow, setShowInputRow] = useState(false)
+  const [currentAccount, setCurrentAccount] = useState({
+    site: "",
+    username: "",
+    password: ""
+  })
+
+
 
   function handleKeyInput(event){
 
@@ -61,13 +68,6 @@ function App() {
     
   }
   
-  const [showInputRow, setShowInputRow] = useState(false)
-  
-  const [currentAccount, setCurrentAccount] = useState({
-    site: "",
-    username: "",
-    password: ""
-  })
   
   function handleInputChange(event){
     setCurrentAccount(prevFormData => {
@@ -108,15 +108,18 @@ function App() {
         <div className="account-info-container row">
           {accountRows}
         </div>
+      
+ 
+
         <div className="note-container">
           <p className="note">Thanks for checking out Vault Keeper 🗝️</p>
           <p>It's a password manager with a custom encryption and a master key for decryption.</p>
-          <p>This projects is still a work in progress. More features are being added daily 🙏</p>
           <br/>
           <p>Click <strong>Set master key</strong> to start!</p>
           <a href="https://github.com/RD2P/vaultkeeper/blob/main/README.md" className="link">Learn more</a>
         </div>
       </div>
+
     </>
   )
 }
